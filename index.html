@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Maison 888 – Residencial Boutique Vertical</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#0f1a24; --ink:#e9edf1; --muted:#a9b5c2; --gold:#b99047; --gold-2:#caa15b; --ink-d:#0b1218; --card:#12202c; --ok:#25D366;}
+  *{box-sizing:border-box}
+  html,body{margin:0;background:#0b141a;color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+  a{color:inherit;text-decoration:none}
+  .top{position:sticky; top:0; z-index:50; backdrop-filter:saturate(120%) blur(10px); background:rgba(15,26,36,.85); border-bottom:1px solid #1b2a36;}
+  .wrap{max-width:1200px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;gap:18px}
+  .brand{font-family:"Playfair Display",serif;font-weight:800;letter-spacing:.2px}
+  .brand a{font-size:28px; line-height:1; color:#fff}
+  .nav{margin-left:auto;margin-right:auto}
+  .nav ul{display:flex;gap:26px;list-style:none;padding:0;margin:0;align-items:center;justify-content:center}
+  .nav a{color:var(--muted);font-weight:600}
+  .nav a:hover{color:#fff}
+  .cta{margin-left:auto}
+  .btn{display:inline-flex;gap:10px;align-items:center;padding:10px 16px;border-radius:10px;font-weight:700}
+  .btn-wa{background:var(--ok);color:#0b141a}
+  .btn-wa:hover{filter:brightness(1.05)}
+  .hero{position:relative;min-height:70vh;display:grid;place-items:center;background:#000}
+  .hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.75}
+  .hero .h-wrap{position:relative;z-index:1;text-align:center; padding:60px 20px}
+  .hero h1{font-family:"Playfair Display",serif;font-size:56px;line-height:1.05;margin:0 0 16px}
+  .hero p{max-width:860px;margin:0 auto 26px;color:#d0d7df;font-size:18px}
+  .hero .act{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .btn-gold{background:var(--gold);color:#10161c;border-radius:999px;padding:14px 22px;font-weight:800}
+  .btn-gold:hover{background:var(--gold-2)}
+  section{padding:64px 20px}
+  .grid{max-width:1200px;margin:0 auto}
+  .about{display:grid;grid-template-columns:1.1fr .9fr;gap:28px}
+  .stats{background:#0f1a24;border:1px solid #203242;border-radius:20px;padding:24px;display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+  .stat{display:grid;gap:6px;place-items:center;padding:10px 6px}
+  .k{font-family:"Playfair Display",serif;font-size:36px;color:var(--gold)}
+  .s{color:#c0c9d2;font-weight:600}
+  .gallery{background:#0e1922}
+  .gallery h2{font-family:"Playfair Display",serif;text-align:center;font-size:44px;margin:0 0 8px}
+  .sub{color:#a9b5c2;text-align:center;margin-bottom:26px}
+  .row{display:grid;grid-template-columns:1fr;gap:18px}
+  .carousel{position:relative;overflow:hidden;border-radius:18px}
+  .track{display:flex;scroll-behavior:smooth;overflow:auto hidden;gap:16px;padding:8px}
+  .track::-webkit-scrollbar{height:0}
+  .card{min-width:380px;max-width:520px;aspect-ratio:16/10;border-radius:16px;overflow:hidden;background:#111}
+  .card img{width:100%;height:100%;object-fit:cover;display:block}
+  .ctrl{position:absolute;inset:0;display:flex;justify-content:space-between;align-items:center;pointer-events:none}
+  .ctrl button{pointer-events:auto; border:0; width:44px; height:44px; border-radius:22px; background:rgba(10,15,20,.8); color:#fff; font-size:18px; display:grid;place-items:center}
+  .ctrl button:hover{background:rgba(10,15,20,1)}
+  .tag{position:absolute;left:14px;top:14px;background:#0f1a24cc;padding:6px 10px;border-radius:999px;border:1px solid #223243;font-weight:700}
+  .cards{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .card-p{background:#0f1a24;border:1px solid #1d2b38;border-radius:16px;padding:20px}
+  .card-p h4{margin:0 0 6px;font-size:20px}
+  .muted{color:#9fb0c0;font-size:14px;margin-bottom:12px}
+  .btn-full{display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:#111;padding:12px 16px;border-radius:10px;font-weight:800}
+  .loc{display:grid;grid-template-columns:1.1fr .9fr;gap:24px}
+  .near{background:#0f1a24;border:1px solid #223244;border-radius:16px;padding:18px}
+  .near ul{margin:10px 0 0 18px}
+  .contact{background:#0e1922}
+  form{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  label{font-weight:700}
+  input,textarea{width:100%;background:#0f1a24;color:#e9edf1;border:1px solid #243646;border-radius:10px;padding:12px;font-size:15px}
+  textarea{min-height:140px;grid-column:1 / -1}
+  .actions{display:flex;gap:12px;grid-column:1 / -1}
+  footer{padding:26px 20px;border-top:1px solid #1b2a36;background:#0f1a24;color:#a9b5c2;text-align:center}
+  .wa-float{position:fixed; right:22px; bottom:22px; width:56px; height:56px; border-radius:50%; background:var(--ok); box-shadow:0 10px 24px rgba(0,0,0,.35); display:grid; place-items:center; z-index:60;}
+  .wa-float svg{width:28px; height:28px; fill:#063}
+  @media (max-width:980px){.about,.loc{grid-template-columns:1fr} .cards{grid-template-columns:1fr} .brand a{font-size:24px}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="brand"><a href="#top">Maison 888</a></div>
+    <nav class="nav" aria-label="principal">
+      <ul>
+        <li><a href="#conceito">Conceito</a></li>
+        <li><a href="#galeria">Galeria</a></li>
+        <li><a href="#plantas">Plantas</a></li>
+        <li><a href="#lazer">Lazer</a></li>
+        <li><a href="#localizacao">Localização</a></li>
+        <li><a href="#contato">Fale Conosco</a></li>
+      </ul>
+    </nav>
+    <div class="cta">
+      <a class="btn btn-wa" href="https://wa.me/5571991168766?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20Maison%20888." target="_blank" rel="noopener">💬 Falar no WhatsApp</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <img src="assets/img/externa/ext_01.jpg" alt="">
+    <div class="h-wrap">
+      <h1>A tradição renasce em sofisticação</h1>
+      <p>No endereço histórico da Mansão 888, nasce um residencial boutique vertical com plantas generosas, lazer exclusivo e acabamentos atemporais.</p>
+      <div class="act">
+        <a class="btn-gold" href="#conceito">Quero conhecer</a>
+        <a class="btn-gold" href="#plantas">Ver plantas</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="conceito">
+    <div class="grid about">
+      <div>
+        <h2 class="brand" style="font-size:44px">Residencial Boutique<br><span style="color:var(--gold)">Vertical</span></h2>
+        <p>O Maison 888 redefine a experiência de morar em Santa Mônica. Apartamentos entre <b>182 e 486 m²</b>, vagas proporcionais ao número de suítes e um lazer desenhado para poucos — piscina, sauna, academia, quadras, mini-mercado, grill &amp; gourmet, coworking, espaço infantil, pet park e muito mais.</p>
+        <p style="color:var(--gold)">Condições de lançamento: entrada facilitada.</p>
+      </div>
+      <div class="stats">
+        <div class="stat"><div class="k">2</div><div class="s">Torres</div></div>
+        <div class="stat"><div class="k">72</div><div class="s">Unidades</div></div>
+        <div class="stat"><div class="k">2–5</div><div class="s">Suítes</div></div>
+        <div class="stat"><div class="k">2–5</div><div class="s">Vagas</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="galeria" class="gallery">
+    <div class="grid">
+      <h2>Galeria Premium</h2>
+      <p class="sub">Use as setas para navegar. Linha 1: <b>Externo</b> • Linha 2: <b>Interno</b>.</p>
+      <div class="row" style="margin-bottom:18px">
+        <div class="carousel" id="ext">
+          <span class="tag">Externo</span>
+          <div class="track">
+            <figure class="card"><img src="assets/img/externa/ext_01.jpg" alt=""></figure>
+            <figure class="card"><img src="assets/img/externa/ext_02.jpg" alt=""></figure>
+            <figure class="card"><img src="assets/img/externa/ext_03.jpg" alt=""></figure>
+            <figure class="card"><img src="assets/img/externa/ext_04.jpg" alt=""></figure>
+            <figure class="card"><img src="assets/img/externa/ext_05.jpg" alt=""></figure>
+            <figure class="card"><img src="assets/img/externa/ext_06.jpg" alt=""></figure>
+            <figure class="card"><img src="assets/img/externa/ext_07.jpg" alt=""></figure>
+            <figure class="card"><img src="assets/img/externa/ext_08.jpg" alt=""></figure>
+            <figure class="card"><img src="assets/img/externa/ext_09.jpg" alt=""></figure>
+            <figure class="card"><img src="assets/img/externa/ext_10.jpg" alt=""></figure>
+          </div>
+          <div class="ctrl">
+            <button aria-label="voltar" onclick="scrollById('ext',-1)">‹</button>
+            <button aria-label="avançar" onclick="scrollById('ext',+1)">›</button>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="carousel" id="int">
+          <span class="tag">Interno</span>
+          <div class="track">
+            <figure class="card"><img src="assets/img/interna/int_01.jpg" alt=""></figure>
+            <figure class="card"><img src="assets/img/interna/int_02.jpg" alt=""></figure>
+            <figure class="card"><img src="assets/img/interna/int_03.jpg" alt=""></figure>
+            <figure class="card"><img src="assets/img/interna/int_04.jpg" alt=""></figure>
+            <figure class="card"><img src="assets/img/interna/int_05.jpg" alt=""></figure>
+            <figure class="card"><img src="assets/img/interna/int_06.jpg" alt=""></figure>
+            <figure class="card"><img src="assets/img/interna/int_07.jpg" alt=""></figure>
+            <figure class="card"><img src="assets/img/interna/int_08.jpg" alt=""></figure>
+            <figure class="card"><img src="assets/img/interna/int_09.jpg" alt=""></figure>
+            <figure class="card"><img src="assets/img/interna/int_10.jpg" alt=""></figure>
+            <figure class="card"><img src="assets/img/interna/int_11.jpg" alt=""></figure>
+            <figure class="card"><img src="assets/img/interna/int_12.jpg" alt=""></figure>
+          </div>
+          <div class="ctrl">
+            <button aria-label="voltar" onclick="scrollById('int',-1)">‹</button>
+            <button aria-label="avançar" onclick="scrollById('int',+1)">›</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="plantas">
+    <div class="grid">
+      <h2 class="brand" style="font-size:40px;margin:0 0 16px">Plantas – Visualização</h2>
+      <p class="muted">Clique para abrir em tela cheia (sem opção de download).</p>
+      <div class="cards">
+        <div class="card-p">
+          <h4>Apartamento Tipo 3 e 4 (Torre II)</h4>
+          <p class="muted">PDF: APT 3 E 4.pdf</p>
+          <a class="btn-full" href="#" onclick="openPdf('assets/pdfs/APT 3 E 4.pdf')">Visualizar em tela cheia</a>
+        </div>
+        <div class="card-p">
+          <h4>Pavimento Tipo – Torre II</h4>
+          <p class="muted">PDF: PAV TIPO T2.pdf</p>
+          <a class="btn-full" href="#" onclick="openPdf('assets/pdfs/PAV TIPO T2.pdf')">Visualizar em tela cheia</a>
+        </div>
+        <div class="card-p">
+          <h4>PUC – 5º Pavimento</h4>
+          <p class="muted">PDF: PUC.pdf</p>
+          <a class="btn-full" href="#" onclick="openPdf('assets/pdfs/PUC.pdf')">Visualizar em tela cheia</a>
+        </div>
+        <div class="card-p">
+          <h4>Planta Baixa – Destaque</h4>
+          <p class="muted">PDF: PLANTA BAIXA.pdf</p>
+          <a class="btn-full" href="#" onclick="openPdf('assets/pdfs/PLANTA BAIXA.pdf')">Visualizar em tela cheia</a>
+        </div>
+        <div class="card-p">
+          <h4>Duplex – Inferior</h4>
+          <p class="muted">PDF: DUPLEX INF.pdf</p>
+          <a class="btn-full" href="#" onclick="openPdf('assets/pdfs/DUPLEX INF.pdf')">Visualizar em tela cheia</a>
+        </div>
+        <div class="card-p">
+          <h4>Duplex – Superior</h4>
+          <p class="muted">PDF: DUPLEX SUP.pdf</p>
+          <a class="btn-full" href="#" onclick="openPdf('assets/pdfs/DUPLEX SUP.pdf')">Visualizar em tela cheia</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="lazer" class="gallery">
+    <div class="grid">
+      <h2>Lazer Boutique</h2>
+      <p class="sub">Piscina com borda infinita, sauna, academia, quadras, mini-mercado, grill & gourmet, coworking, espaço infantil, pet park e mais.</p>
+    </div>
+  </section>
+
+  <section id="localizacao">
+    <div class="grid loc">
+      <div>
+        <h2 class="brand" style="font-size:40px;margin:0 0 10px">Localização Privilegiada</h2>
+        <p><b>R. Rio Amazonas, 888 – Santa Mônica, Feira de Santana – BA, 44077-272.</b></p>
+        <p><a class="btn-gold" href="https://www.google.com/maps?q=R.+Rio+Amazonas,+888+-+Santa+M%C3%B4nica,+Feira+de+Santana+-+BA,+44077-272" target="_blank" rel="noopener">Abrir no Google Maps</a></p>
+        <div class="near">
+          <h3 style="margin:0 0 6px">O que tem próximo</h3>
+          <ul>
+            <li>Atacadão São Roque Contorno (~3 min)</li>
+            <li>Churrascaria Los Pampas (~3 min)</li>
+            <li>Acesso rápido à BR-324 / Anel do Contorno</li>
+            <li>Escolas, hospitais e centros comerciais do bairro</li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <iframe title="Mapa" width="100%" height="360" style="border:0;border-radius:18px"
+          loading="lazy" allowfullscreen
+          src="https://maps.google.com/maps?q=R.%20Rio%20Amazonas,%20888%20-%20Santa%20M%C3%B4nica,%20Feira%20de%20Santana%20-%20BA,%2044077-272&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato" class="contact">
+    <div class="grid">
+      <h2 class="brand" style="font-size:40px;margin:0 0 14px">Fale Conosco</h2>
+      <form onsubmit="sendMail(event)">
+        <div>
+          <label for="nome">Nome completo*</label>
+          <input id="nome" required placeholder="Seu nome completo">
+        </div>
+        <div>
+          <label for="email">E-mail*</label>
+          <input id="email" type="email" required placeholder="voce@exemplo.com">
+        </div>
+        <div>
+          <label for="zap">WhatsApp*</label>
+          <input id="zap" required placeholder="(DD) 9 0000-0000">
+        </div>
+        <div>
+          <label for="assunto">Assunto</label>
+          <input id="assunto" placeholder="Ex.: Interesse em unidade 4 suítes">
+        </div>
+        <div style="grid-column:1/-1">
+          <label for="msg">Mensagem (opcional)</label>
+          <textarea id="msg" placeholder="Conte-nos o que procura"></textarea>
+        </div>
+        <div class="actions">
+          <button class="btn-gold" type="submit">Enviar</button>
+          <a class="btn btn-wa" href="#" onclick="openWhats()" role="button">Chamar no WhatsApp</a>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  MAISON 888 – Residencial Boutique Vertical • Feira de Santana – BA<br>
+  <small>As imagens são ilustrativas e sujeitas ao memorial descritivo.</small>
+</footer>
+
+<a class="wa-float" href="https://wa.me/5571991168766?text=Ol%C3%A1!%20Tenho%20interesse%20no%20Maison%20888." target="_blank" aria-label="WhatsApp">
+  <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true"><path d="M19.1 17.5c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.8.2-.2.3-.9 1-.9 1.2s-.3.2-.6.1c-.3-.2-1.3-.5-2.4-1.6-.9-.9-1.6-2-1.8-2.3-.2-.3 0-.5.1-.7.2-.2.3-.4.5-.6.2-.2.3-.3.5-.6.2-.3.1-.5 0-.6 0-.2-.8-1.9-1.1-2.6-.3-.7-.6-.6-.8-.6h-.7c-.2 0-.6.1-.9.4-.3.3-1.2 1.2-1.2 2.9s1.3 3.4 1.5 3.6c.2.2 2.6 3.9 6.2 5.4.9.4 1.6.6 2.1.8.9.3 1.7.3 2.3.2.7-.1 2-.8 2.3-1.6.3-.8.3-1.5.2-1.6-.1-.1-.3-.2-.6-.4z" fill="#fff"/></svg>
+</a>
+
+<div id="pdfModal" style="position:fixed;inset:0;display:none;background:rgba(0,0,0,.85);z-index:70">
+  <button onclick="closePdf()" style="position:absolute;right:18px;top:18px;background:#000;border:1px solid #333;color:#fff;border-radius:10px;padding:8px 12px">Fechar ✕</button>
+  <iframe id="pdfFrame" title="PDF" style="position:absolute;left:5%;top:8%;width:90%;height:84%;border:0;background:#111"></iframe>
+</div>
+
+<script>
+  function scrollById(id, dir){
+    const scroller = document.querySelector('#'+id+' .track');
+    const card = scroller.querySelector('.card');
+    const step = card ? card.offsetWidth + 16 : 400;
+    scroller.scrollBy({left: step*dir, behavior:'smooth'});
+  }
+  function openPdf(src){
+    const f = document.getElementById('pdfFrame');
+    f.src = src;
+    document.getElementById('pdfModal').style.display='block';
+  }
+  function closePdf(){
+    document.getElementById('pdfModal').style.display='none';
+    document.getElementById('pdfFrame').src='';
+  }
+  function openWhats(){
+    const nome = encodeURIComponent(document.getElementById('nome').value||'');
+    const zap  = encodeURIComponent(document.getElementById('zap').value||'');
+    const msg  = encodeURIComponent(document.getElementById('msg').value||'');
+    const url = `https://wa.me/5571991168766?text=Ol%C3%A1!%20Sou%20${nome}.%20Meu%20WhatsApp:%20${zap}.%20${msg}`;
+    window.open(url,'_blank');
+  }
+  function sendMail(e){
+    e.preventDefault();
+    alert('Obrigado! Recebemos seus dados. Em breve entraremos em contato.');
+  }
+</script>
+</body>
+</html>

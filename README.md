@@ -1,2 +1,2 @@
-# Maison-888
-site da maison
+# Maison 888 – site
+Arquivos prontos para publicar (GitHub Pages / Netlify).
