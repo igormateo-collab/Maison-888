@@ -1,0 +1,16 @@
+
+/* Minimal extras on top of Tailwind */
+:root {
+  --gold: #C9A14C;
+  --navy: #0F1A28;
+  --off: #F5F6F8;
+}
+.header-glass { background: rgba(15,26,40,.85); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(201,161,76,.25); }
+.hero {
+  background-image: linear-gradient(135deg, rgba(15,26,40,.75), rgba(15,26,40,.35)), url('../img/galeria-01.jpg');
+  background-size: cover; background-position: center;
+}
+.shadow-gold { box-shadow: 0 20px 60px rgba(201,161,76,.25); }
+.modal-open { overflow: hidden; }
+.modal-overlay { background: rgba(0,0,0,.8); }
+.thumb:hover { transform: translateY(-3px); }
